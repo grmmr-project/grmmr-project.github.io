@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="robots" content="noindex, nofollow, nosnippet" />
+
+        <title>GRMMR</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/line-awesome@1.3.0/dist/line-awesome/css/line-awesome.min.css" integrity="sha256-zmGhjPCE8VADeYNABEZD8ymsX5AEWsstnneDaL15mFQ=" crossorigin="anonymous" />
+    </head>
+    <body class="bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><a class="navbar-brand" href="#">GRMMR. Добавление контекста</a></nav>
+        <div class="py-5" id="root-container"><div class="container">
+            <div class="card border-primary mb-5"><div class="card-body"><h6 class="card-title">⚡ Как со всем этим в итоге жить?</h6>
+                <p>Синтаксис разметки грамматических явлений следующий: <code>[g:Название явления]содержание[/g]</code>. Точные названия явлений можете подсмотреть в разделе с тегами (он ниже), автоматические подсказки появятся позже.</p>
+                <p>Вместо буквы <code>g</code> в начале и в конце используйте:</p><ol>
+                    <li><code>w</code> для одного слова: <code>[w:Definite Article]the[/w]</code>.</li>
+                    <li><code>s</code> для синтаксических явлений: <code>[s:Adjective Superlative]the most beautiful[/s]</code>.</li>
+                    <li><code>f</code> для функций в предложениях (забегая наперёд): <code>[f:Subject]Her friend[/f] came in</code>.</li>
+                </ol>
+                <p>Эти дикие скобы можно городить как матрёшки: <code>[f:Subject][w:Posessive Pronoun]Her[/w] [w:Common Noun]friend[/w][/f] came in</code>. Потерять бдительность очень легко, будьте внимательны. Главное — не делать матрёшек из одинаковых скоб и следить, что куда вложено.</p>
+                <p>Из разметки автоматически проставляются теги. Если не уверены, как правильнее разметить, — лучше этого не делать. Потом поставите тег ручками. Если какого-то явления тут нет или не нашли свой дискурс в списке (а это очень вероятно) — стучите, будем добавлять.</p>
+                <p>Как только заполнили все нужные поля — жмите кнопку "Добавить контекст", она перебросит на Github, где нужно просто ткнуть кнопку "Commit new file" (зелёную снизу). Не стоит ожидать, что всё сразу появится в "Контекстах" — всё это кешируется на 1 час (иногда меньше). Если уже всё отправили, но есть острое желание что-то поменять, то меняйте на здоровье — файл будет заменён.</p>
+                <p>По любым вопросам (особенно с багами и глюками) — неистово стучите, будем разбираться. Удачи!</p>
+            </div></div>
+
+            <h5 class="mb-3">Разметка контекста</h5><textarea id="grmml" class="form-control mb-2" rows="10"></textarea><div class="text-muted mb-5">Вставьте контекст в поле и сделайте его разметку.</div>
+            <h5 class="mb-3">Перевод</h5>
+            <ul class="nav nav-pills mb-3" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#translation_ru">ru</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#translation_be">be</a></li>
+            </ul>
+            <div class="tab-content mb-2">
+                <textarea id="translation_ru" class="form-control tab-pane active" rows="5"></textarea>
+                <textarea id="translation_be" class="form-control tab-pane" rows="5"></textarea>
+            </div>
+            <div class="text-muted mb-5">Вставьте переводы текста на нужные языки.</div>
+            <h5 class="mb-3">Теги</h5>
+            <div class="card mb-2"><div id="tags" class="card-body overflow-auto" style="height: 25rem"></div></div>
+            <div class="text-muted mb-5">Проверьте, правильно ли определились теги из разметки. Отметьте теги видовременной формы, наклонения и типа предложения или вопроса, если они не определились автоматически.</div>
+            <div class="row">
+                <div class="col"><h5 class="mb-3">Дискурс</h5><select id="discourse" class="custom-select mb-5"></select></div>
+                <div class="col"><h5 class="mb-3">Источник</h5><input id="src" class="form-control mb-5" /></div>
+            </div>
+            <button class="btn btn-primary" onclick="send()">Добавить контекст</button>
+        </div></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mustache@4.0.1/mustache.min.js" integrity="sha256-JoAhdrtmvUmN+9RtRzuF66Ok9RkjWz1XuSObZ8CcwSk=" crossorigin="anonymous"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.6/dist/handlebars.min.js" integrity="sha256-usTqAE1ywvdMtksWzdeWzD75MsfJN0h0U7y2NtZL3N0=" crossorigin="anonymous"></script> -->
+
+
+        <script>
+            // Fetch the filters
+            fetch('grmmr_filters.json', { method: "GET", headers: new Headers({ 'pragma': 'no-cache', 'cache-control': 'no-cache' }) }).then(function(filters){
+                filters.json().then(function(filter){
+                    $('#discourse').html(Mustache.render('{{#discourses}}<option>{{.}}</option>{{/discourses}}', { discourses: filter.discourses }))
+                    $('#tags').html(Mustache.render('{{#filters}}{{#sub}}<div class="mb-3"><h6>{{group}}: {{name}}</h6>{{#types}}<div class="custom-control custom-checkbox"><input type="checkbox" value="{{.}}" class="searchtag custom-control-input" id="filters-checkbox-{{.}}" /><label class="custom-control-label" for="filters-checkbox-{{.}}">{{.}}</label></div>{{/types}}</div>{{/sub}}<hr />{{/filters}}', { filters: filter.filters }))
+
+                    // Watch fields changes
+                    $('#grmml').on('input', function(e){
+                        var grml = $(this).val()
+                        $('.searchtag').each(function(index, elem){
+                            if(grml.search(new RegExp('\[[wsf]\:[a-zA-Z -;]*'+ $(this).attr('value'), 'gm')) !== -1) {$(this).prop('checked', true)} else {$(this).prop('checked', false)}
+                        })
+                    })
+                })
+            })
+
+            // Entry send function
+            function send(){
+                var entry = {
+                    grmml: $('#grmml').val(),
+                    lang: [],
+                    discourse: $('#discourse').val(),
+                    src: $('#src').val(),
+                    tags: []
+                }
+                if($('#translation_ru').val().length > 0) {entry.lang.push({ code: 'ru', txt: $('#translation_ru').val() })}
+                if($('#translation_be').val().length > 0) {entry.lang.push({ code: 'be', txt: $('#translation_be').val() })}
+                $('.searchtag').each(function(){ if(!entry.tags.includes($(this).val()) && this.checked) {entry.tags.push($(this).val())} })
+                var win = window.open('https://github.com/grmmr-project/grmmr-project.github.io/new/master/?filename=_dataset/'+entry.grmml.replace(/\[.+?\]/gmi, '').replace(/\W/gmi, '')+'.yml&value='+encodeURIComponent('---\njson: \''+JSON.stringify(entry)+'\'\n---'), '_blank');
+                win.focus();
+            }
+
+        </script>
+</html>

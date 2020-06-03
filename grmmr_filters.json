@@ -1,0 +1,183 @@
+{
+    "discourses": [
+        "Business",
+        "Domestic",
+        "Computer"
+    ],
+    "filters": [
+        {
+            "group": "Parts of Speech",
+            "sub": [
+                {
+                    "name": "Article",
+                    "types": [
+                        "Definite Article",
+                        "Indefinite Article"
+                    ]
+                },
+                {
+                    "name": "Noun",
+                    "types": [
+                        "Propper Noun",
+                        "Common Noun",
+                        "Collective Noun",
+                        "Posessive Noun",
+                        "Abstract Noun",
+                        "Concrete Noun"
+                    ]
+                },
+                {
+                    "name": "Adjective",
+                    "types": [
+                        "Adjective"
+                    ]
+                },
+                {
+                    "name": "Verb",
+                    "types": [
+                        "Modal Verb",
+                        "Auxiliary Verb",
+                        "Link Verb",
+                        "Action Verb"
+                    ]
+                },
+                {
+                    "name": "Adverb",
+                    "types": [
+                        "Adverb of Manner",
+                        "Adverb of Time",
+                        "Adverb of Place",
+                        "Adverb of Degree"
+                    ]
+                },
+                {
+                    "name": "Pronoun",
+                    "types": [
+                        "Personal Pronoun",
+                        "Demonstrative Pronoun",
+                        "Interrogative Pronoun",
+                        "Indefinite Pronoun",
+                        "Posessive Pronoun",
+                        "Reciprocal Pronoun",
+                        "Reflexive Pronoun"
+                    ]
+                },
+                {
+                    "name": "Preposition",
+                    "types": [
+                        "Preposition of Time",
+                        "Preposition of Place",
+                        "Preposition of Manner",
+                        "Other Prepositions"
+                    ]
+                },
+                {
+                    "name": "Numeral",
+                    "types": [
+                        "Cardinal Numeral",
+                        "Ordinal Numeral"
+                    ]
+                },
+                {
+                    "name": "Conjunction",
+                    "types": [
+                        "Coordinate Conjunction",
+                        "Subordinate Conjunction",
+                        "Correlative Conjunction"
+                    ]
+                },
+                {
+                    "name": "Other",
+                    "types": [
+                        "Interjection",
+                        "Particle"
+                    ]
+                }
+            ]
+        },
+        {
+            "group": "Syntax",
+            "sub": [
+                {
+                    "name": "Verb Form/Tense",
+                    "types": [
+                        "Infinitive",
+                        "Gerund",
+                        "Past Tense",
+                        "Present Tense",
+                        "Future Tense",
+                        "Future-in-the-past Tense"
+                    ]
+                },
+                {
+                    "name": "Aspect",
+                    "types": [
+                        "Aspect Indefinite",
+                        "Aspect Continuous"
+                    ]
+                },
+                {
+                    "name": "Voice",
+                    "types": [
+                        "Active Voice",
+                        "Passive Voice"
+                    ]
+                },
+                {
+                    "name": "Mood",
+                    "types": [
+                        "Indicative Mood",
+                        "Imperative Mood",
+                        "Subjunctive I",
+                        "Subjunctive II",
+                        "Suppositional Mood",
+                        "Conditional Mood"
+                    ]
+                },
+                {
+                    "name": "Type of Sentence",
+                    "types": [
+                        "Simple Sentence",
+                        "Compound Sentence",
+                        "Complex Sentence",
+                        "Compound-complex Sentence"
+                    ]
+                },
+                {
+                    "name": "Question Types",
+                    "types": [
+                        "General Question",
+                        "Special Question",
+                        "Alternative Question",
+                        "Question to Suject",
+                        "Disjunctive Question",
+                        "Indirect Question"
+                    ]
+                },
+                {
+                    "name": "Adjective Degrees of Comparison",
+                    "types": [
+                        "Adjective Positive",
+                        "Adjective Comparative",
+                        "Adjective Superlative"
+                    ]
+                },
+                {
+                    "name": "Adverb Degrees of Comparison",
+                    "types": [
+                        "Adverb Positive",
+                        "Adverb Comparative",
+                        "Adverb Superlative"
+                    ]
+                },
+                {
+                    "name": "Other",
+                    "types": [
+                        "Phrasal Verb",
+                        "To be"
+                    ]
+                }
+            ]
+        }
+    ]
+}

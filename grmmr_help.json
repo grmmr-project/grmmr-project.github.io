@@ -1,0 +1,15 @@
+{
+    "sections": [
+        {
+            "sectionName": "Помощь",
+            "sectionID": "help",
+            "articles": [
+                {
+                    "articleName": "Статус",
+                    "articleID": 1,
+                    "articleContents": "Раздел находится в разработке."
+                }
+            ]
+        }
+    ]
+}
